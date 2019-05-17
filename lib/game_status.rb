@@ -24,13 +24,11 @@ def won?(board)
       y_combo << i
     end
   end
-  WIN_COMBINATIONS.each do |v|
-    if v == x_combo 
-      return x_combo
-    elsif v == y_combo
-      return y_combo
+   WIN_COMBINATIONS.each do |v|
+      if (x_combo.include?(v[0]) && x_combo.include?(v[1]) && x_combo.include?(v[2])) || (y_combo.include?(v[0]) && y_combo.include?(v[1]) && y_combo.include?(v[2]))
+        return v
+      end
     end
-  end
   return false
 end
 
